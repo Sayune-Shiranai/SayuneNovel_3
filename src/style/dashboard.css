@@ -111,6 +111,22 @@ html {
     font-size: 20px;
 }
 
+.topbar-notice .dropdown-menu {
+    position: absolute;
+}
+
+.dropdown-menu .dropdown-menu-title {
+
+}
+
+.dropdown-menu .dropdown-menu-list-notice {
+
+}
+
+.dropdown-menu .dropdown-menu-view-more {
+
+}
+
 /* .topbar-user .topbar-button .img {
     width: 40px;
 } */
