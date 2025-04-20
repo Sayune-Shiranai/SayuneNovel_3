@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="" />
+    <title>Sayune Novel</title>
+    <!-- css boostrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/src/style/index.css" />
+    <link rel="stylesheet" href="/src/style/base.css" />
+    <link rel="stylesheet" href="/src/style/home.css" />
+    <link
+      rel="stylesheet"
+      href="/src/style/icon/fontawesome-free-6.7.2-web/css/all.css"
+    />
+    <link rel="stylesheet" href="/src/style/icon/_fonts.scss" />
+
+    <!-- js boostrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div id="main">
+      <div id="header">
+        <!-- begin nav -->
+        <div id="nav">
+          <div class="nav-logo">
+            <a href="#"><img src="/public/img/logo.png" alt="" /></a>
+          </div>
+
+          <div class="nav-container text-14">
+            <ul class="nav-menu">
+              <li><a href="#">Trang chủ</a></li>
+              <li><a href="#">Thể loại</a></li>
+              <li>
+                <a href="#">
+                  Tìm truyện
+                  <i class="fa-solid fa-angle-down"></i>
+                </a>
+
+                <ul class="sub-nav-menu">
+                  <% theloai.forEach(item => { %>
+                  <li class="category"><a href="#"><%= item.theloai %></a></li>
+                  <% }) %>
+                </ul>
+              </li>
+              <li><a href="#">Theo dõi</a></li>
+              <li><a href="#">Lịch sử</a></li>
+              <li><a href="#">Light Novel</a></li>
+              <li>
+                <a href="#">
+                  Hướng dẫn
+                  <i class="fa-solid fa-angle-down"></i>
+                </a>
+
+                <ul class="sub-nav-menu guide">
+                  <li><a href="#">Giới thiệu</a></li>
+                  <li><a href="#">Đăng truyện</a></li>
+                  <li><a href="#">Góp ý - Báo lỗi</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="nav-container-user">
+          <div class="nav-search">
+            <form action="" class="input-group">
+              <input
+                class="search-input text-14"
+                type="text"
+                placeholder="Search"
+              />
+              <button class="search-submit">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </form>
+          </div>
+
+          <div class="nav-user">
+            <ul>
+              <li>
+                <button class="login-user text-14 js-login">Đăng nhập</button>
+              </li>
+              <!-- <li>
+                <button class="sigup-user text-14 js-register">Đăng kí</button>
+              </li> -->
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="banner">
+        <a href="#">
+          <div
+            class="banner-item"
+            style="
+              background-image: url(/public/img/sekai-ka-kanojo-erabenai.png);
+            "
+          >
+            <img src="" alt="" />
+          </div>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>

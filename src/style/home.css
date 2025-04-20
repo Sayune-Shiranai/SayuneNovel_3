@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Tahoma,sans-serif,Helvetica,Arial;
+}
+
+#banner {
+    margin-top: 60px;
+    height: 700px;
+    background-color: #171717;
+}

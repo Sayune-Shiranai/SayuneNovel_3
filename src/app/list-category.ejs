@@ -1,0 +1,23 @@
+<head>
+  <title>List category</title>
+  <link rel="stylesheet" href="/src/style/list-category.css" />
+</head>
+
+<body>
+  <div class="list-category">
+    <h2>List category</h2>
+  </div>
+
+  <table class="content-table">
+    <thead>
+      <td>Thể loại</td>
+    </thead>
+    <tbody>
+      <% theloai.forEach(item => { %>
+      <tr>
+        <td><%= item.theloai %></td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</body>

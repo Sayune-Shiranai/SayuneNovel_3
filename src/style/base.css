@@ -1,0 +1,53 @@
+:root {
+    --white-color: #fff;
+    --black-color: #000;
+    --login-color: #efeff1;
+    --text-color: #333;
+    --sigup-color: #039be5;
+    --content-color: #ccc;
+    --pink-color: #FFD6E4;
+    --text-color-hover: #039be5;
+    --bs-body-bg: #191e23;
+    --bs-topbar-bg: #1d2329;
+    --bs-border-color: #272f37;
+    --bs-topbar-menu-bg: #232a31;
+    --bs-topbar-icon-menu-color: #afb9cf;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+html {
+    /* font-size: 100%; == 16px */
+    font-size: 62.5%; /* == 10px */
+    line-height: 2.2rem; /* == 22px */
+    box-sizing: border-box;
+}
+
+.text-14 {
+    font-size: 14px;
+}
+
+.text-16 {
+    font-size: 16px;
+}
+
+.font-semibold {
+    font-weight: 600 !important;
+}
+
+.category {
+    float: left;
+}
+
+/* dashboard */
+
+.topbar-button {
+    background-color: var(--bs-topbar-menu-bg);
+    color: var(--bs-topbar-icon-menu-color);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
