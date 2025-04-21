@@ -113,10 +113,11 @@ html {
 
 .topbar-notice .dropdown-menu {
     position: absolute;
+    display: block;
 }
 
 .dropdown-menu .dropdown-menu-title {
-
+    color: white;
 }
 
 .dropdown-menu .dropdown-menu-list-notice {
