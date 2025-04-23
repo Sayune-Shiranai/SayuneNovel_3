@@ -19,11 +19,16 @@
 }
 
 html {
-    /* font-size: 100%; == 16px */
-    font-size: 62.5%; /* == 10px */
-    line-height: 2.2rem; /* == 22px */
+    font-size: 100%; /* == 16px */
+    /* font-size: 62.5%; /* == 10px */
+    /*line-height: 2.2rem; == 22px */
+    line-height: 1.5;
     box-sizing: border-box;
 }
+
+*, *::before, *::after {
+    box-sizing: inherit;
+  }
 
 .text-14 {
     font-size: 14px;
@@ -41,6 +46,10 @@ html {
     float: left;
 }
 
+.dropdown-lg {
+    width: 320px;
+}
+
 /* dashboard */
 
 .topbar-button {
@@ -48,6 +57,11 @@ html {
     color: var(--bs-topbar-icon-menu-color);
     border: none;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 38px;
+    height: 38px;
+}
+
+.dropdown-menu-end {
+    right: 0 !important;
+    left: auto !important;
 }

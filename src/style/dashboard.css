@@ -24,6 +24,12 @@ html {
     height: 70px;
 }
 
+.app-topbar .topbar-items {
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+
 #app-wrapper .app-topbar .container-fluid {
 
 }
@@ -39,18 +45,12 @@ html {
 
 }
 
-.nav-tool .topbar-items {
-    height: 70px;
-    display: flex;
-    align-items: center;
-}
-
 .topbar-items .topbar-toggle-menu {
-    border: none;
+    /* border: none;
     border-radius: 50%;
     padding: 8px;
     background-color: var(--bs-topbar-menu-bg);
-    color: var(--bs-topbar-icon-menu-color);
+    color: var(--bs-topbar-icon-menu-color); */
 }
 
 .topbar-items .topbar-toggle-menu i{
@@ -104,16 +104,19 @@ html {
 }
 
 .topbar-nightmode-toggle .topbar-button i{
-    font-size: 18px;
+    font-size: 22px;
 }
 
 .topbar-notice .topbar-button i{
-    font-size: 20px;
+    font-size: 22px;
 }
 
 .topbar-notice .dropdown-menu {
     position: absolute;
     display: block;
+    top: 100%;
+    /* width: 320px; */
+    background-color: white;
 }
 
 .dropdown-menu .dropdown-menu-title {
@@ -121,7 +124,10 @@ html {
 }
 
 .dropdown-menu .dropdown-menu-list-notice {
-
+    /* max-height: 250px; */
+    height: 250px;
+    background-color: violet;
+    /* width: 100%; */
 }
 
 .dropdown-menu .dropdown-menu-view-more {

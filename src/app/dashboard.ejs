@@ -33,10 +33,10 @@
       <header class="app-topbar">
         <div class="container-fluid">
           <div class="nav-header">
-            <div class="nav-tool d-flex align-items-center gap-4">
+            <div class="nav-tool d-flex align-items-center gap-3">
               <div class="topbar-items">
-                <button class="topbar-toggle-menu">
-                  <i class="fa-solid fa-bars"></i>
+                <button class="topbar-toggle-menu topbar-button">
+                  <i class="fa-solid fa-bars align-middle"></i>
                 </button>
               </div>
 
@@ -56,41 +56,40 @@
               </form>
             </div>
 
-            <div class="nav-user d-flex align-items-center gap-4">
-              <div class="topbar-nightmode-toggle">
+            <div class="nav-user d-flex align-items-center gap-3">
+              <div class="topbar-nightmode-toggle topbar-items">
                 <button class="topbar-button" id="light-dark-mode">
                   <i class="fa-solid fa-sun align-middle dark-mode"></i>
                 </button>
               </div>
 
-              <div class="topbar-notice dropdown">
+              <div class="topbar-notice dropdown topbar-items">
                 <button class="topbar-button">
-                  <i class="fa-regular fa-bell"></i>
+                  <i class="fa-regular fa-bell align-middle"></i>
                 </button>
-                <div class="dropdown-menu">
-                  <div class="dropdown-menu-title">
-                    <div class="p-2">
-                      <div class="row align-items-center">
-                        <div class="row">
-                          <h6 class="m-0 fs-16 fw-semibold">Notifications</h6>
-                        </div>
-                        <div class="row-auto">
-                          <a
-                            href=""
-                            class="text-dark text-decoration-underline"
-                          >
-                            <small>Clear all</small>
-                          </a>
-                        </div>
+
+                <div class="dropdown-menu dropdown-lg dropdown-menu-end">
+                  <div class="dropdown-menu-title p-2">
+                    <div class="row align-items-center">
+                      <div class="col">
+                        <h6 class="m-0 fs-16 fw-semibold">Notifications</h6>
+                      </div>
+
+                      <div class="col-auto">
+                        <a href="" class="text-dark text-decoration-underline">
+                          <small>Clear all</small>
+                        </a>
                       </div>
                     </div>
                   </div>
+
                   <div class="dropdown-menu-list-notice"></div>
+
                   <div class="dropdown-menu-view-more"></div>
                 </div>
               </div>
 
-              <div class="topbar-user d-flex">
+              <div class="topbar-user topbar-items d-flex">
                 <a class="topbar-button">
                   <img
                     class="rounded-circle"
