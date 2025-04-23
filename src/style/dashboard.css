@@ -11,15 +11,16 @@ html {
 
 #app-wrapper {
     height: 100%;
-    background-color: var(--bs-body-bg);
+    /* background-color: var(--bs-body-bg); */
 }
 
-#app-wrapper .app-topbar {
+.app-topbar {
     /* height: 70px; */
     padding-left: 250px;
     top: 0;
     z-index: 1;
     position: relative;
+    background-color: var(--bs-topbar-bg);
     border-bottom: 1px solid var(--bs-border-color);
     height: 70px;
 }
@@ -120,13 +121,13 @@ html {
 }
 
 .dropdown-menu .dropdown-menu-title {
-    color: white;
+    background-color: var(--bs-topbar-bg);
 }
 
 .dropdown-menu .dropdown-menu-list-notice {
     /* max-height: 250px; */
     height: 250px;
-    background-color: violet;
+    background-color: var(--bs-body-bg);
     /* width: 100%; */
 }
 
@@ -137,3 +138,7 @@ html {
 /* .topbar-user .topbar-button .img {
     width: 40px;
 } */
+
+.page-content {
+    height: 1000px;
+}

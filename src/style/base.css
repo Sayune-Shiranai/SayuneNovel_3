@@ -8,10 +8,31 @@
     --pink-color: #FFD6E4;
     --text-color-hover: #039be5;
     --bs-body-bg: #191e23;
-    --bs-topbar-bg: #1d2329;
+
+    /* border bottom */
+    /* --bs-border-width: 1px;
     --bs-border-color: #272f37;
+    --bs-border-style: solid; */
+    /* topbar */
+    --bs-topbar-bg: #1d2329;
+    
     --bs-topbar-menu-bg: #232a31;
     --bs-topbar-icon-menu-color: #afb9cf;
+    --bs-heading-color: #aab8c5;
+    /* sidebar */
+    --bs-sidebar-bg: #1d2329;
+    --bs-sidebar-item-color: #afb9cf;
+    --bs-sidebar-item-hover-bg: #2a3139;
+    --bs-sidebar-item-hover-color: #ffffff;
+    --bs-sidebar-border-color: #272f37;
+}
+
+[data-bs-theme='dark'] {
+    --bs-body-bg: #121212;
+    --bs-body-color: #f8f9fa;
+    --bs-border-width: 1px;
+    --bs-border-color: #272f37;
+    --bs-border-style: solid;
 }
 
 * {
@@ -49,6 +70,19 @@ html {
 .dropdown-lg {
     width: 320px;
 }
+
+h6 {
+    color: var(--bs-heading-color);
+}
+
+.text-dark {
+    color: var(--bs-heading-color) !important;
+}
+
+/* .border-bottom {
+    border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
+} */
+
 
 /* dashboard */
 
