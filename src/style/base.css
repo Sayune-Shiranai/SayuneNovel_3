@@ -15,7 +15,6 @@
     --bs-border-style: solid; */
     /* topbar */
     --bs-topbar-bg: #1d2329;
-    
     --bs-topbar-menu-bg: #232a31;
     --bs-topbar-icon-menu-color: #afb9cf;
     --bs-heading-color: #aab8c5;
@@ -25,6 +24,17 @@
     --bs-sidebar-item-hover-bg: #2a3139;
     --bs-sidebar-item-hover-color: #ffffff;
     --bs-sidebar-border-color: #272f37;
+    --bs-logo-lg-height: 26px;
+    --bs-logo-sm-height: 24px;
+    --bs-sidebar-width: 250px;
+    --bs-sidebar-width-sm: 75px;
+    --bs-sidebar-item-icon-size: 18px;
+    --bs-sidebar-item-font-size: 15px;
+    --bs-sidebar-item-padding-x: 15px;
+    --bs-sidebar-item-padding-y: 10px;
+    --bs-sidebar-item-margin-y: 2px;
+    --bs-topbar-height: 70px;
+    --bs-footer-height: 60px;
 }
 
 [data-bs-theme='dark'] {
@@ -43,6 +53,7 @@ html {
     font-size: 100%; /* == 16px */
     /* font-size: 62.5%; /* == 10px */
     /*line-height: 2.2rem; == 22px */
+    /* 1rem = 16px */
     line-height: 1.5;
     box-sizing: border-box;
 }
@@ -79,13 +90,7 @@ h6 {
     color: var(--bs-heading-color) !important;
 }
 
-/* .border-bottom {
-    border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
-} */
-
-
 /* dashboard */
-
 .topbar-button {
     background-color: var(--bs-topbar-menu-bg);
     color: var(--bs-topbar-icon-menu-color);
@@ -99,3 +104,67 @@ h6 {
     right: 0 !important;
     left: auto !important;
 }
+
+.avatar-sm {
+    height: 36px;
+    width: 36px;
+}
+
+.dropdown-menu.show {
+    top: 100% !important;
+}
+
+.dropdown-menu {
+  animation: DropDownSlide 0.3s ease forwards;
+}
+
+/* Keyframes định nghĩa animation */
+/* animation dropdown-menu */
+@keyframes DropDownSlide {
+    from {
+      transform: translateY(-10px);
+    }
+    to {
+      transform: translateY(0px);
+    }
+}
+
+/* sidebar */
+.logo-box .logo-sm {
+    display: none;
+    height: var(--bs-logo-sm-height);
+}
+
+.logo-box .logo-lg {
+    height: var(--bs-logo-lg-height);
+}
+
+.nav {
+    --bs-nav-link-padding-x: 1rem;
+    --bs-nav-link-padding-y: 0.5rem;
+    --bs-nav-link-font-weight: ;
+    --bs-nav-link-color: var(--bs-link-color);
+    --bs-nav-link-hover-color: var(--bs-link-hover-color);
+    --bs-nav-link-disabled-color: var(--bs-secondary-color);
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+a {
+    color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
+    text-decoration: none;
+}
+
+html[data-sidebar-size=condensed] .app-topbar {
+    padding-left: var(--bs-sidebar-width-sm);
+}
+
+html[data-sidebar-size=condensed] .app-sidebar
+ {
+    position: absolute;
+    width: var(--bs-sidebar-width-sm);
+    min-width: var(--bs-sidebar-width-sm);
+ }
