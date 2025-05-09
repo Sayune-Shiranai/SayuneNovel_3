@@ -2,7 +2,7 @@
 
 function dashboard(fastifyApp, option, done) {
   fastifyApp.get("/dashboard", function (req, rep) {
-    rep.render("dashboard");
+    rep.render("dashboard/dashboard");
   });
   done();
 }

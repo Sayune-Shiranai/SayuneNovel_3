@@ -1,0 +1,109 @@
+.app-sidebar {
+    top: 0;
+    bottom: 0;
+    z-index: 1010;
+    margin-left: 0;
+    position: fixed;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    width: var(--bs-sidebar-width);
+    font-family: Play, sans-serif;
+    background: var(--bs-sidebar-bg);
+    min-width: var(--bs-sidebar-width);
+    padding-bottom: 1.5rem;
+    border-right: var(--bs-border-width) solid var(--bs-sidebar-border-color);
+    border-left: var(--bs-border-width) solid var(--bs-sidebar-border-color);
+}
+
+.logo-box {
+    position: sticky;
+    overflow: hidden;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    line-height: var(--bs-topbar-height);
+    padding: 0 calc(var(--bs-sidebar-width-sm) * .5 - var(--bs-logo-sm-height) * .5);
+}
+
+.logo-dark {
+    display: none;
+}
+
+.logo-light {
+    display: block;
+}
+
+.app-sidebar .scrollbar {
+    height: calc(100% - var(--bs-topbar-height));
+}
+
+.app-sidebar .navbar-nav {
+    margin: 0 15px;
+}
+
+.app-sidebar .menu-title {
+    cursor: default;
+    font-size: 11px;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    color: var(--bs-sidebar-item-color);
+    opacity: .6;
+    font-weight: 600;
+    padding: var(--bs-sidebar-item-padding-y) calc(var(--bs-sidebar-item-padding-x) * 1.25);
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    height: 36px;
+}
+
+.app-sidebar .navbar-nav .nav-item {
+    padding: calc(var(--bs-sidebar-item-padding-y) * .1) 0;
+}
+
+.app-sidebar .navbar-nav .nav-item .nav-link {
+    display: flex;
+    /* gap: 12px; */
+    line-height: 1;
+    font-weight: 400;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    white-space: nowrap;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    border-radius: 8px;
+    color: var(--bs-sidebar-item-color);
+    font-size: var(--bs-sidebar-item-font-size);
+    padding: var(--bs-sidebar-item-padding-y) var(--bs-sidebar-item-padding-x);
+    margin: var(--bs-sidebar-item-margin-y) 0;
+}
+
+.app-sidebar .navbar-nav .nav-item .nav-link .nav-icon-arow-down {
+    margin-left: auto;
+}
+
+.app-sidebar .navbar-nav .sub-navbar-nav {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-left: var(--bs-sidebar-item-padding-x);
+}
+
+.app-sidebar .navbar-nav .sub-navbar-nav .sub-nav-item {
+    padding: calc(var(--bs-sidebar-item-padding-y) * .5) var(--bs-sidebar-item-padding-x);
+}
+
+.app-sidebar .navbar-nav .sub-navbar-nav .sub-nav-item .sub-nav-link {
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+    white-space: nowrap;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    color: var(--bs-sidebar-item-color);
+    font-size: calc(var(--bs-sidebar-item-font-size) * .95);
+    padding: calc(var(--bs-sidebar-item-padding-y) * .25) var(--bs-sidebar-item-padding-x);
+}
