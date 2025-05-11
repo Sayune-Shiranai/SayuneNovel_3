@@ -158,6 +158,25 @@ a {
     text-decoration: none;
 }
 
+html[data-sidebar-size=condensed] .app-sidebar .navbar-nav {
+    padding: 10px;
+    margin: 0;
+}
+
+html[data-sidebar-size=condensed] .app-sidebar .menu-title {
+    height: 0;
+    opacity: 0;
+    padding: 0;
+}
+
+html[data-sidebar-size=condensed] .app-sidebar .logo-box .logo-sm {
+    display: inline-block;
+}
+
+html[data-sidebar-size=condensed] .app-sidebar .logo-box .logo-lg {
+    display: none;
+}
+
 html[data-sidebar-size=condensed] .app-topbar {
     padding-left: var(--bs-sidebar-width-sm);
 }
@@ -168,3 +187,22 @@ html[data-sidebar-size=condensed] .app-sidebar
     width: var(--bs-sidebar-width-sm);
     min-width: var(--bs-sidebar-width-sm);
  }
+
+html[data-sidebar-size=condensed] .app-sidebar .navbar-nav .nav-link {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+html[data-sidebar-size=condensed] .app-sidebar .navbar-nav .nav-link .nav-icon {
+    font-size: 20px !important;
+}
+
+html[data-sidebar-size=condensed] .app-sidebar .navbar-nav>.nav-item .nav-text {
+    margin-left: 10px;
+}
+
+html[data-sidebar-size=condensed] .app-sidebar .navbar-nav .nav-link .nav-text,  
+html[data-sidebar-size=condensed] .app-sidebar .navbar-nav .nav-link .nav-icon-arow-down{
+    display: none;
+}
