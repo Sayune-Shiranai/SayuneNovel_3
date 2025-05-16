@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Tahoma,sans-serif,Helvetica,Arial;
+}
+
+
+.container {
+
+}
+
+.container .auth-body {
+    align-items: center;
+    height: 100vh;
+}
+
+.container .auth-body .auth-form {
+    height: 520px;
+    width: 480px;
+    background-color: black;
+    padding: 44px;
+    color: white;
+}
+
+.auth-form .auth-form__header {
+
+}
+
+.auth-form .auth-form__header .auth-form__heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.auth-form .auth-form__header .auth-form__heading .auth-form__logo {
+    display: inline-block;
+}
+
+.auth-form .auth-form__header .auth-form__heading .auth-form__logo a{
+    height: 60px;
+    display: block;
+}
+
+.auth-form .auth-form__header .auth-form__heading .auth-form__logo a img{
+    height: 60px;
+}
+
+.auth-form .auth-form__header .auth-form__heading .auth-form__title{
+    display: inline-block;
+
+}
+
+.auth-form .auth-form__header .auth-form__notice {
+
+}
+
+.auth-form .auth-form__form {
+    margin-top: 20px;
+}
+
+.auth-form .auth-form__form .auth-form__group {
+
+}
+
+.auth-form .auth-form__form .auth-form__text{
+    display: block;
+    margin: 10px 0;
+}
+
+.auth-form .auth-form__form .auth-form__input{
+    width: 100%;
+    padding: 6px 12px;
+    background-color: inherit;
+    border: 0;

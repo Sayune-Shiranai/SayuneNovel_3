@@ -45,10 +45,10 @@ fastifyApp.register(require("@fastify/static"), {
 const api = require("./src/api");
 fastifyApp.register(api);
 
-// fastifyApp.register(require("./home"));
-// fastifyApp.register(require("./login"));
-// fastifyApp.register(require("./dashboard"));
-// fastifyApp.register(require("./list-category"));
+// fastifyApp.register(require("./src/api/home"));
+// fastifyApp.register(require("./src/api/login"));
+// fastifyApp.register(require("./src/api/dashboard"));
+// fastifyApp.register(require("./src/api/list-category"));
 // Declare a route
 // fastifyApp.get("/", function handler(req, rep) {
 //   rep.send({ hello: "Framework Fastify" });
