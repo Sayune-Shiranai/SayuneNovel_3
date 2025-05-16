@@ -1,8 +1,5 @@
-// function login(fastifyApp, option, done) {
-//   fastifyApp.get("/login", function (req, rep) {
-//     rep.send("login");
-//   });
-//   done();
-// }
-
-// module.exports = login;
+module.exports = async function (fastifyApp, options) {
+  fastifyApp.get("/login", function (req, rep) {
+    rep.render("login");
+  });
+};
