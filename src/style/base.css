@@ -35,6 +35,9 @@
     --bs-sidebar-item-margin-y: 2px;
     --bs-topbar-height: 70px;
     --bs-footer-height: 60px;
+
+    /* login */
+    --bs-login-bg: #1d2329;
 }
 
 [data-bs-theme='dark'] {
@@ -43,6 +46,23 @@
     --bs-border-width: 1px;
     --bs-border-color: #272f37;
     --bs-border-style: solid;
+
+    /* sidebar */
+    --bs-sidebar-bg: #1d2329;
+    --bs-sidebar-item-color: #afb9cf;
+    --bs-sidebar-item-hover-bg: #2a3139;
+    --bs-sidebar-item-hover-color: #ffffff;
+    --bs-sidebar-border-color: #272f37;
+
+    /* login */
+    --bs-border-color: #272f37;
+    --bs-light: #242b33;
+    --bs-dark: #f1f1f1;
+    --bs-light-rgb: 36, 43, 51;
+    --bs-dark-rgb: 241, 241, 241;
+    --bs-headings-color: #aab8c5;
+    --bs-input-border-color: #3a4551;
+    --bs-input-focus-border-color: #4a5663;
 }
 
 * {
