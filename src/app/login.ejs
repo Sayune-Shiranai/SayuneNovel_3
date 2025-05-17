@@ -47,7 +47,7 @@
   <body>
     <div class="container">
       <div class="auth-body row justify-content-center">
-        <div class="auth-form">
+        <div class="auth-form card">
           <div class="auth-form__header">
             <div class="auth-form__heading">
               <div class="auth-form__logo">
@@ -66,22 +66,28 @@
 
           <div class="auth-form__form">
             <div class="auth-form__group">
-              <label class="auth-form__text">Username</label>
+              <label class="auth-form__text mb-3">Username</label>
               <input
                 type="text"
-                class="auth-form__input"
+                class="auth-form__input mb-3"
                 placeholder="Tên đăng nhập"
               />
             </div>
 
             <div class="auth-form__group">
-              <label class="auth-form__text">Password</label>
+              <label class="auth-form__text mb-3">Password</label>
               <input
                 type="password"
-                class="auth-form__input"
+                class="auth-form__input mb-3"
                 placeholder="Mật khẩu"
               />
             </div>
+          </div>
+
+          <div class="text-center mb-3">
+            <button class="auth-form__submit btn btn-primary" type="submit">
+              <span>Đăng nhập</span>
+            </button>
           </div>
         </div>
       </div>

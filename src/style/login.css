@@ -21,7 +21,7 @@ html {
 .container .auth-body .auth-form {
     height: 520px;
     width: 480px;
-    background-color: black;
+    background-color: var(--bs-login-bg);
     padding: 44px;
     color: white;
 }
@@ -67,12 +67,17 @@ html {
 
 .auth-form .auth-form__form .auth-form__text{
     display: block;
-    margin: 10px 0;
 }
 
 .auth-form .auth-form__form .auth-form__input{
     width: 100%;
     padding: 6px 12px;
     background-color: inherit;
-    border: 0;
+    border: 1px solid var(--bs-input-border-color);
+}
+
+
+
+.auth-form .auth-form__submit {
+    width: 50%;
 }
