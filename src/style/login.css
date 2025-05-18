@@ -36,11 +36,12 @@ html {
 }
 
 .auth-form .auth-form__header .auth-form__heading .auth-form__logo {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
 }
 
 .auth-form .auth-form__header .auth-form__heading .auth-form__logo a{
-    height: 60px;
+    height: auto;
     display: block;
 }
 
@@ -48,9 +49,9 @@ html {
     height: 60px;
 }
 
-.auth-form .auth-form__header .auth-form__heading .auth-form__title{
-    display: inline-block;
-
+.auth-form .auth-form__header .auth-form__heading .auth-form__logo .auth-form__title{
+    font-size: 40px;
+    display: block;
 }
 
 .auth-form .auth-form__header .auth-form__notice {
@@ -76,8 +77,19 @@ html {
     border: 1px solid var(--bs-input-border-color);
 }
 
-
+/* .auth-form .form-submit {
+    border-bottom: 1px solid white;
+    padding-bottom: 15px;
+} */
 
 .auth-form .auth-form__submit {
-    width: 50%;
+    width: 100%;
+    background-color: white;
+    color: black;
+    /* border-radius: 20px; */
+}
+
+.auth-form .form-submit .auth-form__submit-text {
+    font-size: 14px;
+    float: left;
 }
