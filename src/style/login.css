@@ -55,7 +55,15 @@ html {
 }
 
 .auth-form .auth-form__header .auth-form__notice {
+    color: var(--bs-item-color);
+}
 
+.auth-form .auth-form__header .auth-form__notice a {
+    color: white;
+}
+
+.auth-form .auth-form__header .auth-form__notice a:hover {
+    color: var(--bs-item-color);
 }
 
 .auth-form .auth-form__form {
@@ -82,6 +90,29 @@ html {
     padding-bottom: 15px;
 } */
 
+
+
+.auth-form .form-submit-checkbox {
+    color: var(--bs-item-color);
+}
+
+
+.auth-form .auth-form__submit-text {
+    color: white;
+}
+
+.auth-form .auth-form__submit-text:hover {
+    color: var(--bs-item-color);
+}
+
+.auth-form .form-submit {
+
+}
+
+.auth-form .form-submit-other {
+
+}
+
 .auth-form .auth-form__submit {
     width: 100%;
     background-color: white;
@@ -89,7 +120,22 @@ html {
     /* border-radius: 20px; */
 }
 
-.auth-form .form-submit .auth-form__submit-text {
-    font-size: 14px;
-    float: left;
+.auth-form .auth-form__submit:hover {
+    width: 100%;
+    background-color: inherit;
+    color: white;
+    border: 1px solid white;
+    /* border-radius: 20px; */
+}
+
+.auth-form .auth-form__submit-another {
+    color: var(--bs-item-color);
+}
+
+.auth-form .auth-form__submit-another a{
+    color: white;
+}
+
+.auth-form .auth-form__submit-another a:hover{
+    color: var(--bs-item-color);
 }
