@@ -1,0 +1,7 @@
+.page-content {
+    margin-left: 250px;
+    position: relative;
+    transition: all .3s ease-in-out;
+    min-height: calc(100vh - var(--bs-topbar-height));
+    padding: 1.5rem .75rem var(--bs-footer-height) .75rem;
+}

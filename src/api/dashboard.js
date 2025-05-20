@@ -1,10 +1,7 @@
 // const dashboard = require("../Dashboard");
 
-function dashboard(fastifyApp, option, done) {
+module.exports = async function (fastifyApp, option) {
   fastifyApp.get("/dashboard", function (req, rep) {
     rep.render("dashboard/dashboard");
   });
-  done();
-}
-
-module.exports = dashboard;
+};
