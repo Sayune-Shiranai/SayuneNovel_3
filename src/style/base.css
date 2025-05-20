@@ -7,7 +7,6 @@
     --content-color: #ccc;
     --pink-color: #FFD6E4;
     --text-color-hover: #039be5;
-    --bs-body-bg: #191e23;
 
     /* border bottom */
     /* --bs-border-width: 1px;
@@ -41,7 +40,7 @@
 }
 
 [data-bs-theme='dark'] {
-    --bs-body-bg: #121212;
+    --bs-body-bg: #1d2329;
     --bs-body-color: #f8f9fa;
     --bs-border-width: 1px;
     --bs-border-color: #272f37;
@@ -64,6 +63,9 @@
     --bs-headings-color: #aab8c5;
     --bs-input-border-color: #3a4551;
     --bs-input-focus-border-color: #4a5663;
+
+    /* Member */
+    /* --bs-card-bg: #1d2329; */
 }
 
 * {

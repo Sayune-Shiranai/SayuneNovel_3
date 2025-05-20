@@ -1,22 +1,22 @@
 #app-wrapper {
     height: 100%;
     /* background-color: var(--bs-body-bg); */
+    background-color: #191e23;
 }
 
 .app-topbar {
-    /* height: 70px; */
     padding-left: 250px;
     top: 0;
     z-index: 1;
     position: relative;
     background-color: var(--bs-topbar-bg);
     border-bottom: 1px solid var(--bs-border-color);
-    height: 70px;
+    height: var(--bs-topbar-height);
     position: sticky;
 }
 
 .app-topbar .topbar-items {
-    height: 70px;
+    height: var(--bs-topbar-height);
     display: flex;
     align-items: center;
 }
@@ -114,11 +114,11 @@
 
 .dropdown-menu .dropdown-menu-list-notice {
     height: 250px;
-    background-color: var(--bs-body-bg);
+    background-color: #191e23;
 }
 
 .dropdown-menu .dropdown-menu-view-more {
-    background-color: var(--bs-body-bg);
+    background-color: #191e23;
 }
 
 .topbar-notice .topbar-button.show,
