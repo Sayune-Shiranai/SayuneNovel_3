@@ -162,16 +162,17 @@ html {
 
 }
 
-#nav-container-user .nav-user li button{
+#nav-container-user .nav-user li .login-user{
     text-decoration: none;
     padding: 4px 10px;
     background-color: var(--login-color);
     border: 0;
     border-radius: 8px;
     height: 30px;
+    display: block;
 }
 
-#nav-container-user .nav-user li button:hover{
+#nav-container-user .nav-user li .login-user:hover{
     color: var(--pink-color);
 }
 
