@@ -45,80 +45,89 @@
   </head>
 
   <body>
-    <div class="container">
-      <div class="auth-body row justify-content-center">
-        <div class="auth-form card">
-          <div class="auth-form__header">
-            <div class="auth-form__heading">
-              <div class="auth-form__logo">
-                <a href="/">
-                  <img src="/public/img/logo.png" alt="" />
-                </a>
-                <div class="auth-form__title">SayuneNovel</div>
+    <form action="/register" method="post">
+      <div class="container">
+        <div class="auth-body row justify-content-center">
+          <div class="auth-form card">
+            <div class="auth-form__header">
+              <div class="auth-form__heading">
+                <div class="auth-form__logo">
+                  <a href="/">
+                    <img src="/public/img/logo.png" alt="" />
+                  </a>
+                  <div class="auth-form__title">SayuneNovel</div>
+                </div>
+              </div>
+
+              <span class="auth-form__notice">
+                Nếu gặp bất cứ vấn đề gì khi đăng nhập/đăng ký, vui lòng liên hệ
+                <a href="#">tại đây</a>.
+              </span>
+            </div>
+
+            <div class="auth-form__form">
+              <div class="auth-form__group">
+                <input
+                  type="text"
+                  class="auth-form__input mb-3"
+                  placeholder="Tên đăng nhập"
+                  name="username"
+                />
+              </div>
+
+              <div class="role">
+                <input type="hidden" name="role" value="user" />
+              </div>
+
+              <div class="auth-form__group">
+                <input
+                  type="password"
+                  class="auth-form__input mb-3"
+                  placeholder="Mật khẩu"
+                  name="password"
+                />
+              </div>
+
+              <div class="auth-form__group">
+                <input
+                  type="password"
+                  class="auth-form__input mb-3"
+                  placeholder="Nhập lại mật khẩu"
+                  name="confirm"
+                />
               </div>
             </div>
 
-            <span class="auth-form__notice">
-              Nếu gặp bất cứ vấn đề gì khi đăng nhập/đăng ký, vui lòng liên hệ
-              <a href="#">tại đây</a>.
-            </span>
-          </div>
-
-          <div class="auth-form__form">
-            <div class="auth-form__group">
-              <input
-                type="text"
-                class="auth-form__input mb-3"
-                placeholder="Tên đăng nhập"
-              />
+            <div class="mb-3 d-flex justify-content-between">
+              <div class="form-submit-checkbox">
+                <input
+                  class="form-checkbox me-1"
+                  type="checkbox"
+                  id="RememberMe"
+                  name="remember"
+                />
+                <label for="RememberMe"
+                  >Tôi đồng ý với
+                  <a href="#">điều khoản của SayuneNovel</a>
+                </label>
+              </div>
             </div>
 
-            <div class="auth-form__group">
-              <input
-                type="password"
-                class="auth-form__input mb-3"
-                placeholder="Mật khẩu"
-              />
+            <div class="form-submit mb-3">
+              <button class="auth-form__submit btn" type="submit">
+                <span>Đăng ký</span>
+              </button>
             </div>
 
-            <div class="auth-form__group">
-              <input
-                type="password"
-                class="auth-form__input mb-3"
-                placeholder="Nhập lại mật khẩu"
-              />
+            <div class="auth-form__submit-another mb-3">
+              <span
+                >Đã có tài khoản?
+                <a href="/login">Đăng nhập</a>
+              </span>
             </div>
-          </div>
-
-          <div class="mb-3 d-flex justify-content-between">
-            <div class="form-submit-checkbox">
-              <input
-                class="form-checkbox me-1"
-                type="checkbox"
-                id="RememberMe"
-                name="remember"
-              />
-              <label for="RememberMe"
-                >Tôi đồng ý với
-                <a href="#">điều khoản của SayuneNovel</a>
-              </label>
-            </div>
-          </div>
-
-          <div class="form-submit mb-3">
-            <button class="auth-form__submit btn" type="submit">
-              <span>Đăng nhập</span>
-            </button>
-          </div>
-
-          <div class="auth-form__submit-another mb-3">
-            <span
-              >Đã có tài khoản?
-              <a href="/login">Đăng ký</a>
-            </span>
           </div>
         </div>
       </div>
-    </div>
+    </form>
   </body>
 </html>
