@@ -19,7 +19,7 @@ html {
 }
 
 .container .auth-body .auth-form {
-    height: 520px;
+    min-height: 520px;
     width: 480px;
     background-color: var(--bs-login-bg);
     padding: 44px;
