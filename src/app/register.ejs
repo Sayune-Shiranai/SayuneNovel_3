@@ -72,7 +72,11 @@
                   class="auth-form__input mb-3"
                   placeholder="Tên đăng nhập"
                   name="username"
+                  value="<%= formData?.username || '' %>"
                 />
+                <% if (errorMessage?.username) { %>
+                <p class="text-center"><%= errorMessage.username %></p>
+                <% } %>
               </div>
 
               <div class="role">
@@ -85,7 +89,11 @@
                   class="auth-form__input mb-3"
                   placeholder="Mật khẩu"
                   name="password"
+                  value="<%= formData?.password || '' %>"
                 />
+                <% if (errorMessage?.password) { %>
+                <p class="text-center small"><%= errorMessage.password %></p>
+                <% } %>
               </div>
 
               <div class="auth-form__group">
@@ -94,7 +102,11 @@
                   class="auth-form__input mb-3"
                   placeholder="Nhập lại mật khẩu"
                   name="confirm"
+                  value="<%= formData?.confirm || '' %>"
                 />
+                <% if (errorMessage?.confirm) { %>
+                <p class="text-center"><%= errorMessage.confirm %></p>
+                <% } %>
               </div>
             </div>
 
