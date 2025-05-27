@@ -45,86 +45,98 @@
   </head>
 
   <body>
-    <div class="container">
-      <div class="auth-body row justify-content-center">
-        <div class="auth-form card">
-          <div class="auth-form__header">
-            <div class="auth-form__heading">
-              <div class="auth-form__logo">
-                <a href="/">
-                  <img src="/public/img/logo.png" alt="" />
-                </a>
-                <div class="auth-form__title">SayuneNovel</div>
+    <form action="/login" method="post">
+      <div class="container">
+        <div class="auth-body row justify-content-center">
+          <div class="auth-form card">
+            <div class="auth-form__header">
+              <div class="auth-form__heading">
+                <div class="auth-form__logo">
+                  <a href="/">
+                    <img src="/public/img/logo.png" alt="" />
+                  </a>
+                  <div class="auth-form__title">SayuneNovel</div>
+                </div>
+              </div>
+
+              <span class="auth-form__notice">
+                Nếu gặp bất cứ vấn đề gì khi đăng nhập/đăng ký, vui lòng liên hệ
+                <a href="#">tại đây</a>.
+              </span>
+            </div>
+
+            <div class="auth-form__form">
+              <div class="auth-form__group">
+                <!-- <label class="auth-form__text mb-3">Username</label> -->
+                <input
+                  type="text"
+                  class="auth-form__input mb-3"
+                  placeholder="Tên đăng nhập"
+                  name="username"
+                />
+
+                <% if (errorMessage?.username) { %>
+                <p class="text-center"><%= errorMessage.username %></p>
+                <% } %>
+              </div>
+
+              <div class="auth-form__group">
+                <!-- <label class="auth-form__text mb-3">Password</label> -->
+                <input
+                  type="password"
+                  class="auth-form__input mb-3"
+                  placeholder="Mật khẩu"
+                  name="password"
+                />
+
+                <% if (errorMessage?.password) { %>
+                <p class="text-center"><%= errorMessage.password %></p>
+                <% } %>
               </div>
             </div>
 
-            <span class="auth-form__notice">
-              Nếu gặp bất cứ vấn đề gì khi đăng nhập/đăng ký, vui lòng liên hệ
-              <a href="#">tại đây</a>.
-            </span>
-          </div>
+            <div class="mb-3 d-flex justify-content-between">
+              <div class="form-submit-checkbox">
+                <input
+                  class="form-checkbox me-1"
+                  type="checkbox"
+                  id="RememberMe"
+                  name="remember"
+                />
+                <label for="RememberMe">Tự động đăng nhập</label>
+              </div>
 
-          <div class="auth-form__form">
-            <div class="auth-form__group">
-              <!-- <label class="auth-form__text mb-3">Username</label> -->
-              <input
-                type="text"
-                class="auth-form__input mb-3"
-                placeholder="Tên đăng nhập"
-              />
+              <a class="auth-form__submit-text" href="#">Quên mật khẩu?</a>
             </div>
 
-            <div class="auth-form__group">
-              <!-- <label class="auth-form__text mb-3">Password</label> -->
-              <input
-                type="password"
-                class="auth-form__input mb-3"
-                placeholder="Mật khẩu"
-              />
+            <div class="form-submit mb-3">
+              <button class="auth-form__submit btn" type="submit">
+                <span>Đăng nhập</span>
+              </button>
             </div>
-          </div>
+            <!-- <button class="auth-form__submit btn mb-2" type="submit">
+                <span>Đăng nhập</span>
+              </button> -->
 
-          <div class="mb-3 d-flex justify-content-between">
-            <div class="form-submit-checkbox">
-              <input
-                class="form-checkbox me-1"
-                type="checkbox"
-                id="RememberMe"
-                name="remember"
-              />
-              <label for="RememberMe">Tự động đăng nhập</label>
+            <div class="form-submit-other text-center mb-3">
+              <!-- <button class="auth-form__submit btn mb-3" type="submit">
+                <span>Đăng nhập</span>
+              </button> -->
+
+              <button class="auth-form__submit btn" type="submit">
+                <span>Đăng nhập với Google</span>
+              </button>
             </div>
 
-            <a class="auth-form__submit-text" href="#">Quên mật khẩu?</a>
-          </div>
-
-          <div class="form-submit mb-3">
-            <button class="auth-form__submit btn" type="submit">
-              <span>Đăng nhập</span>
-            </button>
-          </div>
-          <!-- <button class="auth-form__submit btn mb-2" type="submit">
-              <span>Đăng nhập</span>
-            </button> -->
-
-          <div class="form-submit-other text-center mb-3">
-            <!-- <button class="auth-form__submit btn mb-3" type="submit">
-              <span>Đăng nhập</span>
-            </button> -->
-
-            <button class="auth-form__submit btn" type="submit">
-              <span>Đăng nhập với Google</span>
-            </button>
-          </div>
-
-          <div class="auth-form__submit-another mb-3">
-            <span
-              >Chưa có tài khoản?
-              <a href="/register">Đăng ký ngay</a>
-            </span>
+            <div class="auth-form__submit-another mb-3">
+              <span
+                >Chưa có tài khoản?
+                <a href="/register">Đăng ký ngay</a>
+              </span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </form>
   </body>
 </html>
