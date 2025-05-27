@@ -3,7 +3,6 @@ const fs = require("node:fs"); //Quản lý file trong Node.js
 const util = require("node:util"); //Cung cấp công cụ hỗ trợ, như promisify
 const { pipeline } = require("node:stream"); //	Lấy function pipeline từ module stream, dùng để xử lý luồng dữ liệu (stream).
 const pump = util.promisify(pipeline); // Chuyển pipeline từ callback-based thành Promise-based để dễ sử dụng với async/await.
-const { createHmac, randomBytes } = require("node:crypto");
 const { ObjectId } = require("@fastify/mongodb");
 const ejs = require("ejs");
 
