@@ -1,4 +1,5 @@
 const { createHmac, randomBytes } = require("node:crypto");
+const validator = require("validator");
 
 module.exports = async function (fastifyApp, options) {
   fastifyApp.get("/register", function (req, rep) {
@@ -9,12 +10,14 @@ module.exports = async function (fastifyApp, options) {
   });
 
   fastifyApp.post("/register", async function (req, rep) {
-    const { username, password, confirm, role } = req.body;
+    const { username, email, role, password, confirm } = req.body;
+    const normalizedEmail = email.trim().toLowerCase();
 
     if (!username || !password || !confirm) {
       return rep.render("register", {
         errorMessage: {
           username: !username ? "Tên đăng nhập không được để trống" : null,
+          email: !normalizedEmail ? "Email không được để trống" : null,
           password: !password ? "Mật khẩu không được để trống" : null,
           confirm: !confirm ? "Vui lòng nhập lại mật khẩu" : null,
         },
@@ -33,6 +36,23 @@ module.exports = async function (fastifyApp, options) {
         },
         formData: req.body,
       });
+    }
+
+    const checkemail = await this.mongo.db
+      .collection("users")
+      .findOne({ email: normalizedEmail });
+
+    if (checkemail) {
+      return rep.render("register", {
+        errorMessage: {
+          email: "Email đã được sử dụng!",
+        },
+        formData: req.body,
+      });
+    }
+
+    if (!validator.isEmail(normalizedEmail)) {
+      errorMessage.email = "Email không hợp lệ";
     }
 
     if (password.length < 6) {
@@ -62,6 +82,7 @@ module.exports = async function (fastifyApp, options) {
 
     await this.mongo.db.collection("users").insertOne({
       username,
+      email: normalizedEmail,
       role,
       salt,
       hpass,

@@ -79,6 +79,20 @@
                 <% } %>
               </div>
 
+              <div class="auth-form__group">
+                <input
+                  type="email"
+                  class="auth-form__input mb-3"
+                  placeholder="Email"
+                  name="email"
+                  required
+                  value="<%= formData?.email || '' %>"
+                />
+                <% if (errorMessage?.email) { %>
+                <p class="text-center"><%= errorMessage.email %></p>
+                <% } %>
+              </div>
+
               <div class="role">
                 <input type="hidden" name="role" value="user" />
               </div>

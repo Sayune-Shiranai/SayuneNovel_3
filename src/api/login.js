@@ -1,4 +1,5 @@
 const { createHmac } = require("node:crypto");
+// const validator = require("validator");
 
 module.exports = async function (fastifyApp, options) {
   fastifyApp.get("/login", function (req, rep) {
@@ -27,22 +28,22 @@ module.exports = async function (fastifyApp, options) {
         .update(req.body.password)
         .digest("hex");
       if (hpass === user.hpass) {
-        // const token = this.jwt.sign(
-        //   { username: user.username, role: user.role },
-        //   { expiresIn: "1m" }
-        // );
+        const accessToken = this.jwt.sign(
+          { username: user.username, role: user.role },
+          { expiresIn: "1m" }
+        );
 
-        // const refreshToken = this.jwt.sign(
-        //   { username: user.username, role: user.role },
-        //   { expiresIn: "7d" }
-        // );
+        const refreshToken = this.jwt.sign(
+          { username: user.username, role: user.role },
+          { expiresIn: "7d" }
+        );
 
-        // await this.mongo.db
-        //   .collection("users")
-        //   .updateOne({ username: user.username }, { $set: { refreshToken } });
+        await this.mongo.db
+          .collection("users")
+          .updateOne({ username: user.username }, { $set: { refreshToken } });
 
-        // rep.cookie("token", token, { httpOnly: true });
-        // rep.cookie("refreshToken", refreshToken, { httpOnly: true });
+        rep.cookie("accessToken", accessToken, { httpOnly: true });
+        rep.cookie("refreshToken", refreshToken, { httpOnly: true });
 
         return rep.redirect("/");
 

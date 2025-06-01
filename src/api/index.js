@@ -7,6 +7,7 @@ async function api(fastifyApp, options) {
   fastifyApp.register(require("./login"));
   fastifyApp.register(require("./register"));
   fastifyApp.register(require("./member"));
+  fastifyApp.register(require("./auth-google"));
 }
 
 module.exports = api;
