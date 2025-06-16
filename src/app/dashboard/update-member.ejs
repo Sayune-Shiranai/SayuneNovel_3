@@ -1,0 +1,42 @@
+<div class="card">
+  <div class="card-header">
+    <h5 class="card-title">Update Member</h5>
+    <p class="card-subtitle"></p>
+  </div>
+
+  <form action="/dashboard/member/update/<%= user._id %>" method="post">
+    <div class="card-body">
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input
+          type="text"
+          class="form-control"
+          id="username"
+          name="username"
+          value="<%= user.username %>"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          value="<%= user.email %>"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="role" class="form-label">Vai trò</label>
+        <input
+          type="text"
+          class="form-control"
+          id="role"
+          name="role"
+          value="<%= user.role %>"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary">Cập nhật</button>
+    </div>
+  </form>
+</div>

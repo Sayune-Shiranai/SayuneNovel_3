@@ -10,6 +10,7 @@
         <tr>
           <th scope="col">Id</th>
           <th scope="col">Username</th>
+          <th scope="col">Email</th>
           <th scope="col">Role</th>
           <th scope="col">Passwword</th>
           <!-- <th scope="col">Date joined</th> -->
@@ -22,11 +23,12 @@
         <tr>
           <th scope="row"><%= index + 1 %></th>
           <td><%= user.username %></td>
+          <td><%= user.email %></td>
           <td><%= user.role %></td>
           <td><%= user.salt %></td>
           <td>
-            <a href="">Update</a>
-            <a href="">Delete</a>
+            <a href="/dashboard/member/update/<%= user._id %>">Update</a>
+            <a href="/dashboard/member/delete/<%= user._id %>">Delete</a>
           </td>
         </tr>
         <% }) %>
