@@ -4,11 +4,6 @@ const { ObjectId } = require("@fastify/mongodb");
 module.exports = async function (fastifyApp, options) {
   fastifyApp.get("/dashboard/member", async function (req, rep) {
     const users = await this.mongo.db.collection("users").find({}).toArray();
-    // const body = await rep.render(
-    //   "dashboard/member.ejs",
-    //   { users },
-    //   { raw: true }
-    // );
     return rep.render("dashboard/dashboard", {
       users,
       user: null,
@@ -41,10 +36,10 @@ module.exports = async function (fastifyApp, options) {
     rep.redirect("/dashboard/member");
   });
 
-  // fastifyApp.get("/dashboard/member/delete/:id", async function (req, rep) {
-  //   const result = await this.mongo.db
-  //     .collection("users")
-  //     .deleteOne({ _id: new ObjectId(req.params.id) });
-  //   rep.redirect("/dashboard/member");
-  // });
+  fastifyApp.get("/dashboard/member/delete/:id", async function (req, rep) {
+    const result = await this.mongo.db
+      .collection("users")
+      .deleteOne({ _id: new ObjectId(req.params.id) });
+    rep.redirect("/dashboard/member");
+  });
 };
