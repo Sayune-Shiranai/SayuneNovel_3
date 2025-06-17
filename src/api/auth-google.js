@@ -7,8 +7,8 @@ module.exports = async function (fastifyApp, options) {
   // khởi tạo OAuth2Client
   // OAuth2Client lưu trữ CLIENT_ID và là "công cụ" giúp bạn thao tác với OAuth 2.0 như verifyIdToken
   const client = new OAuth2Client(CLIENT_ID);
-  console.log("CLIENT_ID: ", CLIENT_ID);
-  console.log("client: ", client);
+  // console.log("CLIENT_ID: ", CLIENT_ID);
+  // console.log("client: ", client);
 
   async function verifyGoogleIdToken(idToken) {
     const checkIdToken = await client.verifyIdToken({
@@ -30,13 +30,13 @@ module.exports = async function (fastifyApp, options) {
 
     const { id_token, access_token, refresh_token } = token;
 
-    console.log("Full token:", token);
+    // console.log("Full token:", token);
 
-    console.log("id_token: ", token.id_token);
+    // console.log("id_token: ", token.id_token);
 
-    console.log("access_token: ", token.access_token);
+    // console.log("access_token: ", token.access_token);
 
-    console.log("refresh_token: ", token.refresh_token);
+    // console.log("refresh_token: ", token.refresh_token);
 
     const userInfo = await verifyGoogleIdToken(id_token);
     console.log("UserInfo:", userInfo);
