@@ -43,7 +43,7 @@ module.exports = async function (fastifyApp, options) {
 
     const checkuser = await this.mongo.db
       .collection("users")
-      .findOne({ sub: userInfo.sub });
+      .findOne({ email: userInfo.email });
 
     const vnTime = new Date().toLocaleString("vi-VN", {
       timeZone: "Asia/Ho_Chi_Minh",
@@ -61,10 +61,9 @@ module.exports = async function (fastifyApp, options) {
       });
     } else {
       await this.mongo.db.collection("users").updateOne(
-        { sub: checkuser.sub },
+        { email: checkuser.email },
         {
           $set: {
-            username: userInfo.name,
             email: userInfo.email,
             picture: userInfo.picture,
           },
@@ -75,9 +74,8 @@ module.exports = async function (fastifyApp, options) {
     // Sau khi insert/update xong, lấy lại user từ DB
     let user = await this.mongo.db
       .collection("users")
-      .findOne({ sub: userInfo.sub });
+      .findOne({ email: userInfo.email });
 
-    // Tạo JWT riêng cho ứng dụng
     const accessToken = this.jwt.sign(
       { username: user.username, role: user.role },
       { expiresIn: "1m" }
@@ -88,12 +86,10 @@ module.exports = async function (fastifyApp, options) {
       { expiresIn: "7d" }
     );
 
-    // Lưu refreshToken riêng của app vào DB
     await this.mongo.db
       .collection("users")
-      .updateOne({ sub: user.sub }, { $set: { refreshToken } });
+      .updateOne({ sub: user.email }, { $set: { refreshToken } });
 
-    // Gửi về client qua cookie
     rep.cookie("accessToken", accessToken, {
       httpOnly: true,
       path: "/",
@@ -103,19 +99,6 @@ module.exports = async function (fastifyApp, options) {
       path: "/",
     });
 
-    // console.log("info id_token", googleUser);
-
-    // // Lưu thông tin user vào session (nếu dùng session)
-    // req.session.user = {
-    //   id: user._id,
-    //   name: user.name,
-    //   email: user.email,
-    //   picture: user.picture,
-    // };
-
-    // Gán cookie token cho client (tuỳ chọ
-
-    // Chuyển hướng về trang chủ hoặc trang bạn muốn
     return rep.redirect("/");
   });
 };

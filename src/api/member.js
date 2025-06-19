@@ -6,7 +6,6 @@ module.exports = async function (fastifyApp, options) {
     const users = await this.mongo.db.collection("users").find({}).toArray();
     return rep.render("dashboard/dashboard", {
       users,
-      user: null,
       partial: "member",
     });
   });
@@ -17,7 +16,6 @@ module.exports = async function (fastifyApp, options) {
       .findOne({ _id: new ObjectId(req.params.id) });
     return rep.render("dashboard/dashboard", {
       user,
-      users: [],
       partial: "update-member",
     });
   });

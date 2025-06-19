@@ -54,7 +54,17 @@
       <!-- Sidebar start -->
       <%- include("sidebar") %>
       <!-- Page content start -->
-      <%- include("pagecontent", { users, user, partial }) %>
+      <div class="page-content">
+        <div class="container-fluid">
+          <% if (partial === "member") { %> <%- include("./member", { users })%>
+          <!-- update-member -->
+          <% } else if (partial === "update-member") { %> <%-
+          include("./update-member", { user }) %>
+          <!-- create-item -->
+          <% } else if (partial === "create-item") { %> <%-
+          include("./create-item") %> <% } %>
+        </div>
+      </div>
     </div>
   </body>
 </html>

@@ -1,5 +1,7 @@
 <div class="page-content">
   <div class="container-fluid">
+    <!-- item -->
+    <%- include("./create-item") %>
     <!-- member -->
     <% if (partial === "member") { %> <%- include("./member", { users }) %> <% }
     else if (partial === "update-member") { %> <%- include("./update-member", {
