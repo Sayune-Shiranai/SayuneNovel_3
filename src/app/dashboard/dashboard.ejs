@@ -56,13 +56,18 @@
       <!-- Page content start -->
       <div class="page-content">
         <div class="container-fluid">
-          <% if (partial === "member") { %> <%- include("./member", { users })%>
-          <!-- update-member -->
-          <% } else if (partial === "update-member") { %> <%-
-          include("./update-member", { user }) %>
+          <!-- libary -->
+          <% if (partial === "libary") { %> <%- include("./libary", { libary
+          })%>
           <!-- create-item -->
           <% } else if (partial === "create-item") { %> <%-
-          include("./create-item") %> <% } %>
+          include("./create-item") %>
+          <!-- member -->
+          <% } else if (partial === "member") { %> <%- include("./member", {
+          users }) %>
+          <!-- update-member -->
+          <% } else if (partial === "update-member") { %> <%-
+          include("./update-member", { user }) %> <% } %>
         </div>
       </div>
     </div>

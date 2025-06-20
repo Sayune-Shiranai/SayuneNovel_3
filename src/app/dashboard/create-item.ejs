@@ -5,25 +5,49 @@
   </div>
 
   <div class="card-body">
-    <div class="mb-3">
-      <label for="itemname" class="form-label">Tên truyện</label>
-      <input type="text" class="form-control" id="itemname" name="itemname" />
-    </div>
+    <form action="/dashboard/add-item" method="post" enctype="multipart/form-data">
+      <div class="mb-3">
+        <label for="itemname" class="form-label">Tên truyện</label>
+        <input
+          type="text"
+          class="form-control"
+          id="itemname"
+          name="itemname"
+          placeholder="Nhập tên truyện"
+        />
+      </div>
 
-    <div class="mb-3">
-      <label for="theloai" class="form-label">Thể loại</label>
-      <input type="text" class="form-control" id="theloai" name="theloai" />
-    </div>
+      <div class="mb-3">
+        <label for="theloai" class="form-label">Thể loại</label>
+        <input type="text" class="form-control" id="theloai" name="theloai" />
+      </div>
 
-    <div class="mb-3">
-      <label for="tacgia" class="form-label">Tác giả</label>
-      <input type="text" class="form-control" id="tacgia" name="tacgia" />
-    </div>
+      <div class="mb-3">
+        <label for="tacgia" class="form-label">Tác giả</label>
+        <input
+          type="text"
+          class="form-control"
+          id="tacgia"
+          name="tacgia"
+          placeholder="Nhập tên tác giả"
+        />
+      </div>
 
-    <div class="mb-3">
-      <label for="trangthai" class="form-label">Trạng thái</label>
-      <input type="text" class="form-control" id="trangthai" name="trangthai" />
+      <div class="mb-3">
+        <label for="trangthai" class="form-label">Trạng thái</label>
+        <input type="text" class="form-control" id="trangthai" name="trangthai" />
+      </div>
+
+      <div class="mb-3">
+        <label for="noidung" class="form-label">Nội dung</label>
+        <textarea
+          name="noidung"
+          id="noidung"
+          placeholder="Nhập mô tả nội dung"
+        ></textarea>
+        <!-- <input type="text" class="form-control" id="noidung" name="noidung" /> -->
+      </div>
+      <button type="submit" class="btn btn-primary">Thêm</button>
     </div>
-    <button type="submit" class="btn btn-primary">Thêm</button>
-  </div>
+  </form>  
 </div>

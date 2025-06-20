@@ -1,6 +1,6 @@
 <div class="card">
   <div class="card-header">
-    <h5 class="card-title">Member</h5>
+    <h5 class="card-title">Libary</h5>
     <p class="card-subtitle"></p>
   </div>
 
@@ -9,26 +9,28 @@
       <thead>
         <tr>
           <th scope="col">Id</th>
-          <th scope="col">Username</th>
-          <th scope="col">Email</th>
-          <th scope="col">Role</th>
-          <th scope="col">Passwword</th>
+          <th scope="col">Tên truyện</th>
+          <th scope="col">Thể loại</th>
+          <th scope="col">Tác giả</th>
+          <th scope="col">Trạng thái</th>
+          <th scope="col">Nội dung</th>
           <!-- <th scope="col">Date joined</th> -->
           <!-- <th scope="col">Last login</th> -->
           <th scope="col">Action</th>
         </tr>
       </thead>
       <tbody>
-        <% users.forEach((user, index) => { %>
+        <% libary.forEach((item, index) => { %>
         <tr>
           <th scope="row"><%= index + 1 %></th>
-          <td><%= user.username %></td>
-          <td><%= user.email %></td>
-          <td><%= user.role %></td>
-          <td><%= user.salt %></td>
+          <td><%= item.itemname %></td>
+          <td><%= item.theloai %></td>
+          <td><%= item.tacgia %></td>
+          <td><%= item.trangthai %></td>
+          <td><%= item.noidung %></td>
           <td>
-            <a href="/dashboard/member/update/<%= user._id %>">Update</a>
-            <a href="/dashboard/member/delete/<%= user._id %>">Delete</a>
+            <a href="">Update</a>
+            <a href="">Delete</a>
           </td>
         </tr>
         <% }) %>
