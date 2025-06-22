@@ -62,6 +62,18 @@
           <!-- create-item -->
           <% } else if (partial === "create-item") { %> <%-
           include("./create-item") %>
+          <!-- update-item -->
+          <% } else if (partial === "update-item") { %> <%-
+          include("./update-item", { item }) %>
+          <!-- category -->
+          <% } else if (partial === "categories") { %> <%- include("./category",
+          { categories }) %>
+          <!-- create-category -->
+          <% } else if (partial === "create-category") { %> <%-
+          include("./create-category") %>
+          <!-- update-category -->
+          <% } else if (partial === "update-category") { %> <%-
+          include("./update-category", { category }) %>
           <!-- member -->
           <% } else if (partial === "member") { %> <%- include("./member", {
           users }) %>

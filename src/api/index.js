@@ -9,6 +9,7 @@ async function api(fastifyApp, options) {
   fastifyApp.register(require("./member"));
   fastifyApp.register(require("./auth-google"));
   fastifyApp.register(require("./item"));
+  fastifyApp.register(require("./category"));
 }
 
 module.exports = api;

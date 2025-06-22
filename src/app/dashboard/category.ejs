@@ -1,7 +1,8 @@
 <div class="card">
   <div class="card-header">
-    <h5 class="card-title">Libary</h5>
+    <h5 class="card-title">Thể loại</h5>
     <p class="card-subtitle"></p>
+    <a href="/dashboard/add-category" class="btn btn-primary">Thêm</a>
   </div>
 
   <div class="card-body">
@@ -9,28 +10,22 @@
       <thead>
         <tr>
           <th scope="col">Id</th>
-          <th scope="col">Tên truyện</th>
           <th scope="col">Thể loại</th>
-          <th scope="col">Tác giả</th>
-          <th scope="col">Trạng thái</th>
-          <th scope="col">Nội dung</th>
+
           <!-- <th scope="col">Date joined</th> -->
           <!-- <th scope="col">Last login</th> -->
           <th scope="col">Action</th>
         </tr>
       </thead>
       <tbody>
-        <% libary.forEach((item, index) => { %>
+        <% categories.forEach((item, index) => { %>
         <tr>
           <th scope="row"><%= index + 1 %></th>
-          <td><%= item.itemname %></td>
           <td><%= item.theloai %></td>
-          <td><%= item.tacgia %></td>
-          <td><%= item.trangthai %></td>
-          <td><%= item.noidung %></td>
+
           <td>
-            <a href="/dashboard/update/<%= item._id %>">Update</a>
-            <a href="/dashboard/delete/<%= item._id %>">Delete</a>
+            <a href="/dashboard/category/update/<%= item._id %>">Update</a>
+            <a href="/dashboard/category/delete/<%= item._id %>">Delete</a>
           </td>
         </tr>
         <% }) %>
