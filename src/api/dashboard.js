@@ -6,7 +6,11 @@ module.exports = async function (fastifyApp, option) {
     const user = await this.mongo.db
       .collection("users")
       .findOne({ _id: new ObjectId(req.params.id) });
-    const libary = await this.mongo.db.collection("Libary").find({}).toArray();
+    const libary = await this.mongo.db
+      .collection("Libary")
+      .find({})
+      .sort({ id: 1 })
+      .toArray();
     const categories = await this.mongo.db
       .collection("Category")
       .find({})

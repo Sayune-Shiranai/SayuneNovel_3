@@ -1,0 +1,63 @@
+<div class="card">
+  <div class="card-header">
+    <h5 class="card-title">Thêm chapter mới</h5>
+    <p class="card-subtitle"></p>
+  </div>
+
+  <div class="card-body">
+    <form
+      action="/dashboard/<%= slug %>/add-chapter"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <div class="mb-3">
+        <label for="chapter_number" class="form-label">Chapter</label>
+        <input
+          type="text"
+          class="form-control"
+          id="chapter_number"
+          name="chapter_number"
+          placeholder="Nhập chapter truyện"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="name_chapter" class="form-label">Tên truyện</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name_chapter"
+          name="name_chapter"
+          placeholder="Nhập tên chapter"
+        />
+      </div>
+
+      <div>
+        <p>Chọn ảnh</p>
+        <input type="file" name="content" multiple />
+        <img
+          id="preview-img"
+          ,
+          src=""
+          ,
+          style="max-width: 200px; display: none"
+        />
+      </div>
+
+      <button type="submit" class="btn btn-primary">Thêm chapter</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  function previewImage(input) {
+    const preview = document.getElementById("preview-img");
+    const file = input.files[0];
+    if (file) {
+      preview.src = URL.createObjectURL(file);
+      preview.style.display = "block";
+    } else {
+      preview.style.display = "none";
+    }
+  }
+</script>

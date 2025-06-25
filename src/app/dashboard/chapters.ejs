@@ -1,0 +1,34 @@
+<div class="card">
+  <div class="card-header">
+    <h5 class="card-title">Chapter</h5>
+    <p class="card-subtitle"></p>
+    <a href="/dashboard/<%= slug %>/add-chapter" class="btn btn-primary"
+      >Thêm</a
+    >
+  </div>
+
+  <div class="card-body">
+    <table class="table table-hover table-dark">
+      <thead>
+        <tr>
+          <th scope="col">Chapter</th>
+          <th scope="col">Tên chapter</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% chapters.forEach(chapter => { %>
+        <tr>
+          <td><%= chapter.chapter_number %></td>
+          <td><%= chapter.name_chapter %></td>
+          <td>
+            <a href="/dashboard/<%= slug %>/delete/<%= chapter._id %>"
+              >Delete</a
+            >
+          </td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</div>

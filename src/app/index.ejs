@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="/src/style/index.css" />
     <link rel="stylesheet" href="/src/style/base.css" />
     <link rel="stylesheet" href="/src/style/home.css" />
+    <link rel="stylesheet" href="/src/style/mainpart.css" />
+    <link rel="stylesheet" href="/src/style/book.css" />
     <link
       rel="stylesheet"
       href="/src/style/icon/fontawesome-free-6.7.2-web/css/all.css"
@@ -27,6 +29,24 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/simplebar/6.3.0/simplebar.min.css"
+    />
+    <!-- Select2 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- js simplebar -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplebar/6.3.0/simplebar.min.js"></script>
+
+    <!-- jQuery (cần cho Select2) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Select2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
   </head>
 
   <body>
@@ -89,30 +109,53 @@
 
           <div class="nav-user">
             <ul>
+              <% if (user) { %>
+              <li class="user-dropdown dropdown">
+                <a
+                  href="#"
+                  class="dropdown-toggle text-14"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i class="fa-solid fa-user"></i> <%= user.username %>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end text-14">
+                  <li>
+                    <a class="dropdown-item" href="/profile">Trang cá nhân</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/">Quản lý</a>
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <form method="post" action="/logout">
+                      <button type="submit" class="dropdown-item text-danger">
+                        Đăng xuất
+                      </button>
+                    </form>
+                  </li>
+                </ul>
+              </li>
+              <% } else { %>
               <li>
                 <a class="login-user text-14 js-login" href="/login"
                   >Đăng nhập</a
                 >
               </li>
-              <!-- <li>
-                <button class="sigup-user text-14 js-register">Đăng kí</button>
-              </li> -->
+              <!-- <li><button class="sigup-user text-14 js-register">Đăng kí</button></li> -->
+              <% } %>
             </ul>
           </div>
         </div>
       </div>
 
-      <div id="banner">
-        <a href="#">
-          <div
-            class="banner-item"
-            style="
-              background-image: url(/public/img/sekai-ka-kanojo-erabenai.png);
-            "
-          >
-            <img src="" alt="" />
-          </div>
-        </a>
+      <% if (partial === "home") { %> <%- include("banner") %> <% } %>
+      <div id="mainpart">
+        <% if (partial === "home") { %> <%- include("./mainpart", { libary,
+        theloai})%> <% } else if (partial === "book") { %> <%- include("./book",
+        { item, chapters, theloai, user}) %> <% } else if (partial ===
+        "chapter") { %> <%- include("./chapter", { item, chapter, theloai}) %><%
+        } %>
       </div>
     </div>
   </body>

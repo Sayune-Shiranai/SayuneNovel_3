@@ -14,6 +14,7 @@ module.exports = async function (fastifyApp, options) {
 
     if (!username || !password) {
       return rep.render("login", {
+        formData: { username },
         errorMessage: {
           username: !username ? "Vui lòng nhập tên đăng nhập!" : null,
           password: !password ? "Vui lòng nhập mật khẩu!" : null,
@@ -54,6 +55,7 @@ module.exports = async function (fastifyApp, options) {
         // }
       } else {
         return rep.render("login", {
+          formData: { username },
           errorMessage: {
             password: "Tên đăng nhập hoặc mật khẩu không đúng!",
           },
@@ -61,6 +63,7 @@ module.exports = async function (fastifyApp, options) {
       }
     } else {
       return rep.render("login", {
+        formData: { username },
         errorMessage: {
           password: "Tên đăng nhập hoặc mật khẩu không đúng!",
         },

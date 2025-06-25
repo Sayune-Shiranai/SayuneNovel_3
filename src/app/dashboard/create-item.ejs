@@ -5,7 +5,22 @@
   </div>
 
   <div class="card-body">
-    <form action="/dashboard/add-item" method="post" enctype="multipart/form-data">
+    <form
+      action="/dashboard/add-item"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <div class="mb-3">
+        <label for="id" class="form-label">Id</label>
+        <input
+          type="text"
+          class="form-control"
+          id="id"
+          name="id"
+          placeholder="Nhập id"
+        />
+      </div>
+
       <div class="mb-3">
         <label for="itemname" class="form-label">Tên truyện</label>
         <input
@@ -18,8 +33,34 @@
       </div>
 
       <div class="mb-3">
+        <input
+          type="file"
+          class="form-control"
+          id="imgavt"
+          name="imgavt"
+          accept="image/*"
+          onchange="previewImage(event)"
+        />
+        <img
+          src=""
+          alt=""
+          id="preview-img"
+          style="max-width: 100px; padding: 12px; display: none"
+        />
+      </div>
+
+      <div class="mb-3">
         <label for="theloai" class="form-label">Thể loại</label>
-        <input type="text" class="form-control" id="theloai" name="theloai" />
+        <select
+          class="form-select js-multiple-select"
+          id="theloai"
+          name="theloai[]"
+          multiple
+        >
+          <% categories.forEach(item => { %>
+          <option value="<%= item.theloai %>"><%= item.theloai %></option>
+          <% }) %>
+        </select>
       </div>
 
       <div class="mb-3">
@@ -35,7 +76,10 @@
 
       <div class="mb-3">
         <label for="trangthai" class="form-label">Trạng thái</label>
-        <input type="text" class="form-control" id="trangthai" name="trangthai" />
+        <select class="form-select" id="trangthai" name="trangthai" required>
+          <option value="Đang tiến hành">Đang tiến hành</option>
+          <option value="Đã hoàn thành">Đã hoàn thành</option>
+        </select>
       </div>
 
       <div class="mb-3">
@@ -48,6 +92,25 @@
         <!-- <input type="text" class="form-control" id="noidung" name="noidung" /> -->
       </div>
       <button type="submit" class="btn btn-primary">Thêm</button>
-    </div>
-  </form>  
+    </form>
+  </div>
 </div>
+
+<script>
+  $(document).ready(function () {
+    $(".js-multiple-select").select2({
+      placeholder: "Chọn thể loại",
+      width: "100%",
+    });
+  });
+
+  function previewImage(event) {
+    const reader = new FileReader();
+    reader.onload = function () {
+      const img = document.getElementById("preview-img");
+      img.src = reader.result;
+      img.style.display = "block"; // Hiện ảnh khi chọn
+    };
+    reader.readAsDataURL(event.target.files[0]);
+  }
+</script>

@@ -101,11 +101,8 @@ fastifyApp.after(() => {
   });
 });
 
-// console.log("GOOGLE_CLIENT_ID: ", process.env.GOOGLE_CLIENT_ID); // đúng
+// console.log("GOOGLE_CLIENT_ID: ", process.env.GOOGLE_CLIENT_ID);
 // console.log(".GOOGLE_CLIENT_SECRET: ", process.env.GOOGLE_CLIENT_ID);
-
-// require("dotenv").config();
-// fastifyApp.register(fastifyEnv, options);
 
 const api = require("./src/api");
 fastifyApp.register(api);
@@ -113,27 +110,9 @@ fastifyApp.register(api);
 const services = require("./src/services");
 fastifyApp.register(services);
 
-// const authGoogle = require("./src/api/auth-google");
+const auth = require("./src/services/auth");
+const authority = require("./src/services/authority");
 
-// fastifyApp.register(authGoogle, {
-//   clientId: fastifyApp.config.GOOGLE_CLIENT_ID,
-//   clientSecret: fastifyApp.config.GOOGLE_CLIENT_SECRET,
-// });
-
-// const plugins = require("./src/plugins");
-// fastifyApp.register(plugins);
-
-// const authGoogle = require("./src/api/auth-google");
-// fastifyApp.register(plugins, {
-//   clientId: fastifyApp.config.GOOGLE_CLIENT_ID,
-//   clientSecret: fastifyApp.config.GOOGLE_CLIENT_SECRET,
-// });
-// fastifyApp.register(authGoogle);
-
-// fastifyApp.register(require("./src/api/home"));
-// fastifyApp.register(require("./src/api/login"));
-// fastifyApp.register(require("./src/api/dashboard"));
-// fastifyApp.register(require("./src/api/list-category"));
 // Declare a route
 // fastifyApp.get("/", function handler(req, rep) {
 //   rep.send({ hello: "Framework Fastify" });

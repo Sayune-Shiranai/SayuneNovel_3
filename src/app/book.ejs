@@ -1,0 +1,44 @@
+<div class="story-container">
+  <div class="story-main">
+    <div class="story-header">
+      <div class="image-wrapper">
+        <img src="/public/avt-item/<%= item.imgavt %>" alt="Bìa truyện" />
+      </div>
+      <div class="info-wrapper">
+        <h2><%= item.itemname %></h2>
+        <ul class="genre-list">
+          <% item.theloai.forEach(theloai => { %>
+          <li class="tag"><%= theloai %></li>
+          <% }) %>
+        </ul>
+
+        <div class="detail-item">
+          <div class="info-item">
+            <strong>Tác giả:</strong>
+            <p><%= item.tacgia %></p>
+          </div>
+          <div class="info-item">
+            <strong>Tình trạng:</strong>
+            <p><%= item.tinhtrang %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="story-summary">
+    <h2>Tóm tắt</h2>
+    <p><%= item.noidung %></p>
+  </div>
+</div>
+
+<div class="list-chapters">
+  <h2>Danh sách chương</h2>
+  <div class="chapter">
+    <% chapters.forEach(chapter => { %>
+    <a href="/truyen/<%= item.slug %>/chapter-<%= chapter.chapter_number %>">
+      Chapter <%= chapter.chapter_number %>
+    </a>
+    <% }) %>
+  </div>
+</div>

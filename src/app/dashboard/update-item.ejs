@@ -7,6 +7,18 @@
   <div class="card-body">
     <form action="/dashboard/update/<%= item._id %>" method="post" enctype="multipart/form-data">
       <div class="mb-3">
+        <label for="id" class="form-label">Id</label>
+        <input
+          type="text"
+          class="form-control"
+          id="id"
+          name="id"
+          placeholder="Nhập id"
+          value="<%= item.id %>"
+        />
+      </div>
+
+      <div class="mb-3">
         <label for="itemname" class="form-label">Tên truyện</label>
         <input
           type="text"
@@ -19,8 +31,44 @@
       </div>
 
       <div class="mb-3">
+        <input
+          type="file"
+          class="form-control"
+          id="imgavt"
+          name="imgavt"
+          onchange="previewImage(event)"
+        />
+        <input
+          type="hidden"
+          class="form-control"
+          id="oldImgavt"
+          name="oldImgavt"
+          value="<%= item.imgavt %>"
+        />
+        <div style="position: relative; display: inline-block;">
+          <img
+            src="/public/avt-item/<%= item.imgavt %>"
+            alt=""
+            id="preview-img"
+            style="max-width: 100px; padding: 12px; display: block"
+          />
+          <input type="hidden" name="deleteImg" id="deleteImg" value="false" />
+          <button class="delete-btn" id="delete-btn" type="button" onclick="deleteImage()" style="position: absolute; top: 0; right: 0; background: transparent; border: none; color: red; width: 22px; height: 22px ; cursor: pointer; display: <%= item.imgavt && item.imgavt.trim() !== '' ? 'block' : 'none' %>;">
+            <i class="fas fa-times"></i>
+          </button>
+        </div> 
+      </div>
+
+      <div class="mb-3">
         <label for="theloai" class="form-label">Thể loại</label>
-        <input type="text" class="form-control" id="theloai" name="theloai" />
+        <select class="form-select js-multiple-select" id="theloai" name="theloai[]" multiple>
+          <% categories.forEach(category => { %>
+            <option value="<%= category.theloai %>" 
+              <%= Array.isArray(item.theloai) && item.theloai.includes(category.theloai) ? "selected" : "" %>>
+              <%= category.theloai %>
+            </option>
+          <% }) %>
+        </select>
       </div>
 
       <div class="mb-3">
@@ -37,7 +85,10 @@
 
       <div class="mb-3">
         <label for="trangthai" class="form-label">Trạng thái</label>
-        <input type="text" class="form-control" id="trangthai" name="trangthai" />
+        <select class="form-select" id="trangthai" name="trangthai" required>
+          <option value="Đang tiến hành">Đang tiến hành</option>
+          <option value="Đã hoàn thành">Đã hoàn thành</option>
+        </select>
       </div>
 
       <div class="mb-3">
@@ -54,3 +105,43 @@
     </div>
   </form>  
 </div>
+
+<script>
+  $(document).ready(function () {
+    $('.js-multiple-select').select2({
+      placeholder: "Chọn thể loại",
+      width: "100%"
+    });
+  });
+
+
+    
+    // Ẩn ảnh
+  function previewImage(event) {
+    const img = document.getElementById("preview-img");
+    const deleteBtn = document.getElementById("delete-btn");
+    const checkImgavt = event.target.files[0];
+    if(checkImgavt) {
+      const reader = new FileReader();
+      reader.onload = function () {
+      img.src = reader.result;
+      img.style.display = "block"; // Hiện ảnh khi chọn
+      deleteBtn.style.display = "block";
+      
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    } else {
+      img.style.display = "none";
+      deleteBtn.style.display = "none";
+    }
+  }
+
+  function deleteImage() {
+    const img = document.getElementById("preview-img");
+    const deleteBtn = document.getElementById("delete-btn");
+    const deleteImgavt = document.getElementById("deleteImg");
+    img.style.display = "none";
+    deleteBtn.style.display = "none";
+    deleteImgavt.value = "true";
+  }
+</script>

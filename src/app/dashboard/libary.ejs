@@ -10,24 +10,35 @@
         <tr>
           <th scope="col">Id</th>
           <th scope="col">Tên truyện</th>
+          <th scope="col">Hình ảnh</th>
           <th scope="col">Thể loại</th>
           <th scope="col">Tác giả</th>
           <th scope="col">Trạng thái</th>
           <th scope="col">Nội dung</th>
+          <th scope="col">Số chương</th>
           <!-- <th scope="col">Date joined</th> -->
           <!-- <th scope="col">Last login</th> -->
           <th scope="col">Action</th>
         </tr>
       </thead>
       <tbody>
-        <% libary.forEach((item, index) => { %>
+        <% libary.forEach((item) => { %>
         <tr>
-          <th scope="row"><%= index + 1 %></th>
+          <th scope="row"><%= item.id %></th>
           <td><%= item.itemname %></td>
+          <td>
+            <img
+              src="/public/avt-item/<%= item.imgavt %>"
+              alt="<%= item.imgavt %>"
+              style="max-height: 150px"
+            />
+          </td>
+
           <td><%= item.theloai %></td>
           <td><%= item.tacgia %></td>
           <td><%= item.trangthai %></td>
           <td><%= item.noidung %></td>
+          <td><a href="/dashboard/<%= item.slug %>">view</a></td>
           <td>
             <a href="/dashboard/update/<%= item._id %>">Update</a>
             <a href="/dashboard/delete/<%= item._id %>">Delete</a>
