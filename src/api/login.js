@@ -46,13 +46,11 @@ module.exports = async function (fastifyApp, options) {
         rep.cookie("accessToken", accessToken, { httpOnly: true });
         rep.cookie("refreshToken", refreshToken, { httpOnly: true });
 
-        return rep.redirect("/");
-
-        // if (user.role === "admin") {
-        //   rep.redirect("/dashboard");
-        // } else if (user.role === "user") {
-        //   rep.redirect("/");
-        // }
+        if (user.role === "admin") {
+          rep.redirect("/dashboard");
+        } else if (user.role === "user") {
+          rep.redirect("/");
+        }
       } else {
         return rep.render("login", {
           formData: { username },

@@ -71,7 +71,6 @@ module.exports = async function (fastifyApp, options) {
       );
     }
 
-    // Sau khi insert/update xong, lấy lại user từ DB
     let user = await this.mongo.db
       .collection("users")
       .findOne({ email: userInfo.email });
@@ -88,7 +87,7 @@ module.exports = async function (fastifyApp, options) {
 
     await this.mongo.db
       .collection("users")
-      .updateOne({ sub: user.email }, { $set: { refreshToken } });
+      .updateOne({ email: user.email }, { $set: { refreshToken } });
 
     rep.cookie("accessToken", accessToken, {
       httpOnly: true,

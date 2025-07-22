@@ -1,6 +1,9 @@
+const auth = require("../services/auth");
 module.exports = async function (fastifyApp, options) {
+  //router(get/truyen/:slug/chapter-:chapter_number): view chapter
   fastifyApp.get(
     "/truyen/:slug/chapter-:chapter_number",
+    { onRequest: auth },
     async function (req, rep) {
       const chapter = await this.mongo.db.collection("Chapters").findOne({
         chapter_number: req.params.chapter_number,

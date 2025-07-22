@@ -1,2 +1,2 @@
 
-  decorateReply: false, //Không thêm sendFile vào reply
+const ejs = require("ejs");

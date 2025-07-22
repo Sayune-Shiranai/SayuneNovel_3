@@ -6,6 +6,7 @@ const { pipeline } = require("node:stream");
 const pump = util.promisify(pipeline);
 
 module.exports = async function (fastifyApp, options) {
+  //router(get/dashboard/:slug): return list chapter
   fastifyApp.get("/dashboard/:slug", async function (req, rep) {
     const chapters = await this.mongo.db
       .collection("Chapters")
@@ -20,6 +21,7 @@ module.exports = async function (fastifyApp, options) {
     });
   });
 
+  //router(get/dashboard/:slug/add-chapter): create a chapter form
   fastifyApp.get("/dashboard/:slug/add-chapter", function (req, rep) {
     // const chapters = await this.mongo.db
     //   .collection("Chapters")
@@ -31,6 +33,7 @@ module.exports = async function (fastifyApp, options) {
     });
   });
 
+  //router(post/dashboard/:slug/add-chapter): create a chapter
   fastifyApp.post("/dashboard/:slug/add-chapter", async function (req, rep) {
     const libary = await this.mongo.db
       .collection("Libary")
@@ -71,6 +74,12 @@ module.exports = async function (fastifyApp, options) {
         );
       }
 
+      imageUrls.sort((a, b) => {
+        const getNumber = (filename) =>
+          parseInt(filename.match(/\d+/)?.[0] || 0);
+        return getNumber(a) - getNumber(b);
+      });
+
       if (imageUrls.length === 0) {
         return rep.status(400).send({ message: "Không có file nào được lưu." });
       }
@@ -91,6 +100,7 @@ module.exports = async function (fastifyApp, options) {
     }
   });
 
+  //router(get/dashboard/:slug/delete/:id): delete a chapter
   fastifyApp.get("/dashboard/:slug/delete/:id", async function (req, rep) {
     try {
       const chapter = await this.mongo.db

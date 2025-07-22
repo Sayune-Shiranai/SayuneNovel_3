@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="/src/style/home.css" />
     <link rel="stylesheet" href="/src/style/mainpart.css" />
     <link rel="stylesheet" href="/src/style/book.css" />
+    <link rel="stylesheet" href="/src/style/chapter.css" />
     <link
       rel="stylesheet"
       href="/src/style/icon/fontawesome-free-6.7.2-web/css/all.css"
@@ -60,11 +61,10 @@
 
           <div class="nav-container text-14">
             <ul class="nav-menu">
-              <li><a href="#">Trang chủ</a></li>
-              <li><a href="#">Thể loại</a></li>
+              <li><a href="/">Trang chủ</a></li>
               <li>
-                <a href="#">
-                  Tìm truyện
+                <a href="#"
+                  >Thể loại
                   <i class="fa-solid fa-angle-down"></i>
                 </a>
 
@@ -73,6 +73,9 @@
                   <li class="category"><a href="#"><%= item.theloai %></a></li>
                   <% }) %>
                 </ul>
+              </li>
+              <li>
+                <a href="#"> Tìm truyện </a>
               </li>
               <li><a href="#">Theo dõi</a></li>
               <li><a href="#">Lịch sử</a></li>

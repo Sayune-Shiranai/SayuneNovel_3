@@ -1,4 +1,7 @@
 async function auth(req, rep) {
+  console.log("Cookie accessToken:", req.cookies.accessToken);
+  console.log("Cookie refreshToken:", req.cookies.refreshToken);
+
   // Kiểm tra xem có token không
   if (req.cookies && req.cookies.accessToken) {
     req.user = null;
@@ -33,6 +36,12 @@ async function auth(req, rep) {
         "Giá trị của storedUser.refreshToken:",
         storedUser.refreshToken
       );
+
+      if (!storedUser) {
+        rep.clearCookie("accessToken");
+        rep.clearCookie("refreshToken");
+        return rep.redirect("/login");
+      }
       console.log("Giá trị của cookie.refreshToken:", req.cookies.refreshToken);
       // Kiểm tra nếu refresh token hợp lệ
       if (storedUser && storedUser.refreshToken === req.cookies.refreshToken) {
@@ -61,12 +70,13 @@ async function auth(req, rep) {
           );
 
         // Gửi Access Token và Refresh Token mới về client
-        rep.setCookie("accessToken", newToken, { httpOnly: true });
+        rep.setCookie("accessToken", newToken, { httpOnly: true, path: "/" });
         console.log("Giá trị của newToken:", newToken);
+
         rep.setCookie("refreshToken", newRefreshToken, {
           httpOnly: true,
+          path: "/",
         });
-
         console.log("Giá trị của newRefreshToken:", newRefreshToken);
 
         // Lưu thông tin người dùng vào request

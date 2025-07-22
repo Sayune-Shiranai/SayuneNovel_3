@@ -1,9 +1,9 @@
 const { ObjectId } = require("@fastify/mongodb");
-const path = require("node:path"); // giúp xử lý và thao tác với đường dẫn file @fastify/static
-const fs = require("node:fs"); //Quản lý file trong Node.js
-const util = require("node:util"); //Cung cấp công cụ hỗ trợ, như promisify
-const { pipeline } = require("node:stream"); //	Lấy function pipeline từ module stream, dùng để xử lý luồng dữ liệu (stream).
-const pump = util.promisify(pipeline); // Chuyển pipeline từ callback-based thành Promise-based để dễ sử dụng với async/await.
+const path = require("node:path");
+const fs = require("node:fs");
+const util = require("node:util");
+const { pipeline } = require("node:stream");
+const pump = util.promisify(pipeline);
 
 module.exports = async function (fastifyApp, options) {
   function removeAccents(str) {
@@ -63,7 +63,7 @@ module.exports = async function (fastifyApp, options) {
       console.log("fields.theloai", checktheloai);
       console.log("theloai", theloai);
       // save req.body --> mongodb studentdb
-      const slug = createSlug(req.body.itemname.value);
+      const slug = createSlug(req.body.id.value + req.body.itemname.value);
       const item = await this.mongo.db.collection("Libary").insertOne({
         id: req.body.id.value,
         itemname: req.body.itemname.value,

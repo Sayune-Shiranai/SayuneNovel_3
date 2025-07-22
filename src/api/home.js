@@ -1,5 +1,6 @@
 // src/routes/home.js
 const auth = require("../services/auth");
+const authority = require("../services/authority");
 module.exports = async function (fastifyApp, options) {
   fastifyApp.get("/", { onRequest: auth }, async function (req, rep) {
     const theloai = await this.mongo.db
