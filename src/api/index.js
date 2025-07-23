@@ -14,6 +14,7 @@ async function api(fastifyApp, options) {
   fastifyApp.register(require("./logout"));
   fastifyApp.register(require("./book"));
   fastifyApp.register(require("./chapter-view"));
+  fastifyApp.register(require("./search"));
 }
 
 module.exports = api;

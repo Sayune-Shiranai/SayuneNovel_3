@@ -98,10 +98,11 @@
 
         <div id="nav-container-user">
           <div class="nav-search">
-            <form action="" class="input-group">
+            <form action="/search" method="get" class="input-group">
               <input
                 class="search-input text-14"
                 type="text"
+                name="keyword"
                 placeholder="Search"
               />
               <button class="search-submit">
@@ -157,8 +158,9 @@
         <% if (partial === "home") { %> <%- include("./mainpart", { libary,
         theloai})%> <% } else if (partial === "book") { %> <%- include("./book",
         { item, chapters, theloai, user}) %> <% } else if (partial ===
-        "chapter") { %> <%- include("./chapter", { item, chapter, theloai}) %><%
-        } %>
+        "chapter") { %> <%- include("./chapter", { item, chapter, theloai}) %>
+        <% } else if (partial === "search") { %> <%- include("./search", {
+        search, keyword, searchResult}) %><% } %>
       </div>
     </div>
   </body>

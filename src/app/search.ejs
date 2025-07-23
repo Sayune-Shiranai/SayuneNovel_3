@@ -1,0 +1,13 @@
+<h3>Kết quả tìm kiếm cho: "<%= keyword %>"</h3>
+
+<% if (search.length === 0) { %>
+<p>Không tìm thấy truyện nào.</p>
+<% } else { %>
+<ul>
+  <% search.forEach(item => { %>
+  <li>
+    <a href="/truyen/<%= item.slug %>"><%= item.itemname %></a>
+  </li>
+  <% }) %>
+</ul>
+<% } %>
