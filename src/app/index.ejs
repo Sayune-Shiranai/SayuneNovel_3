@@ -24,6 +24,8 @@
     />
     <link rel="stylesheet" href="/src/style/icon/_fonts.scss" />
 
+    <!-- js -->
+    <script src="/public/js/search-suggest.js"></script>
     <!-- js boostrap -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -103,11 +105,14 @@
                 class="search-input text-14"
                 type="text"
                 name="keyword"
+                id="search-box"
                 placeholder="Search"
               />
               <button class="search-submit">
                 <i class="fa-solid fa-magnifying-glass"></i>
               </button>
+
+              <ul id="suggestion-list" class="suggestion-dropdown"></ul>
             </form>
           </div>
 
