@@ -26,7 +26,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     suggestionList.innerHTML = data
       .map(
-        (item) => `<li><a href="/truyen/${item.slug}">${item.itemname}</a></li>`
+        (item) => `<li><a href="/truyen/${item.slug}">
+        <img src="/public/avt-item/${item.imgavt}">
+        <p>${item.itemname}</p>
+        </a></li>`
       )
       .join("");
 
@@ -35,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Ẩn gợi ý khi click ngoài
   document.addEventListener("click", function (e) {
-    if (!suggestionList.contains(e.target) && e.target !== input) {
+    if (!suggestionList.contains(e.target) && e.target !== searchInput) {
       suggestionList.style.display = "none";
     }
   });

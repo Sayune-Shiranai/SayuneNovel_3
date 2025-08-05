@@ -10,7 +10,7 @@ module.exports = async function (fastifyApp, options) {
     const item = await this.mongo.db
       .collection("Libary")
       .find({ itemname: { $regex: keyword, $options: "i" } })
-      .project({ itemname: 1, slug: 1, _id: 0 })
+      .project({ itemname: 1, slug: 1, imgavt: 1, _id: 0 })
       .limit(5)
       .toArray();
 
