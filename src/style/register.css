@@ -21,7 +21,7 @@ html {
 .container .auth-body .auth-form {
     min-height: 520px;
     width: 480px;
-    background-color: var(--bs-login-bg);
+    /* background-color: var(--bs-login-bg); */
     padding: 44px;
     color: white;
 }
