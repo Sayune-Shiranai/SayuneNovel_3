@@ -16,6 +16,7 @@ async function api(fastifyApp, options) {
   fastifyApp.register(require("./chapter-view"));
   fastifyApp.register(require("./search"));
   fastifyApp.register(require("./search-suggest"));
+  fastifyApp.register(require("./test"));
 }
 
 module.exports = api;

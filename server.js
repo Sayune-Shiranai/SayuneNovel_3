@@ -119,7 +119,7 @@ const authority = require("./src/services/authority");
 // });
 
 // Run the server!
-fastifyApp.listen({ port: 3000 }, (err) => {
+fastifyApp.listen({ port: 3000, host: "0.0.0.0" }, (err) => {
   if (err) {
     fastifyApp.log.error(err);
     process.exit(1);

@@ -223,6 +223,16 @@ html {
 
 }
 
+#nav-container-user .nav-user li a{
+    color: #afb9cf;
+}
+
+#nav-container-user .nav-user img{
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 4px;
+}
+
 #nav-container-user .nav-user li .login-user{
     text-decoration: none;
     padding: 4px 10px;
