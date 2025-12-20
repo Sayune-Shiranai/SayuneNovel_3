@@ -61,7 +61,7 @@ const schema = {
   properties: {
     PORT: {
       type: "string",
-      default: "3000",
+      default: "4000",
     },
     GOOGLE_CLIENT_ID: { type: "string" },
     GOOGLE_CLIENT_SECRET: { type: "string" },
@@ -93,7 +93,7 @@ fastifyApp.after(() => {
       auth: oauthPlugin.GOOGLE_CONFIGURATION,
     },
     startRedirectPath: "/login/google",
-    callbackUri: "http://127.0.0.1:3000/login/google/callback",
+    callbackUri: "http://127.0.0.1:4000/login/google/callback",
     callbackUriParams: {
       access_type: "offline",
     },
@@ -119,7 +119,7 @@ const authority = require("./src/services/authority");
 // });
 
 // Run the server!
-fastifyApp.listen({ port: 3000, host: "0.0.0.0" }, (err) => {
+fastifyApp.listen({ port: 4000, host: "0.0.0.0" }, (err) => {
   if (err) {
     fastifyApp.log.error(err);
     process.exit(1);
